@@ -1,4 +1,5 @@
 from tabulate import tabulate
+
 def tabel(data, headers=None, title=""):
     if not data: 
         table = [["Tidak ada data"]]

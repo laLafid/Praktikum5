@@ -1,4 +1,5 @@
 import tabel as tb
+
 mahadata = {}
 def nilai(str):
     while True:
@@ -9,8 +10,19 @@ def nilai(str):
             else:
                 return poin
         except ValueError:
-            print("Input harus berupa angka!!")   
-            
+            print("Input harus berupa angka!!")       
+def nim_adalah(str, harus_ada=False):
+    while True:
+        try:
+            NIM = int(input(str))
+            if harus_ada and NIM not in mahadata:
+                print("NIM tidak ditemukan!")
+            elif not harus_ada and NIM in mahadata:
+                print("NIM sudah ada di database. Masukkan NIM lain!")
+            else:
+                return NIM
+        except ValueError:
+            print("Input harus berupa angka!!")    
 def minta(NIM):
     nama = input("Masukkan Nama: ")
     tugas, uts, uas = map(nilai, [
@@ -27,40 +39,20 @@ def minta(NIM):
         "Nilai UAS": uas,
         "Nilai Akhir": akhir
     }
-    
-def tambah():
-    NIM = int(input("Masukkan NIM (e.g. 123456789): "))
-    if NIM in mahadata:
-        print("NIM sudah ada di database. Silakan masukkan NIM lain.")
-        return
-    data = minta(NIM)
-    mahadata[NIM] = data
-    print("Data berhasil ditambahkan.")
-    
-def hapus():
-    NIM = int(input("Masukkan NIM yang ingin dihapus: "))
-    if NIM in mahadata:
-        del mahadata[NIM]
-        print("Data berhasil dihapus.")
-    else:
-        print("NIM tidak ditemukan.")
-        
-def ubah():
-    NIM = int(input("Masukkan NIM yang ingin diubah: "))
-    if NIM in mahadata:
-        data = minta(NIM)
-        mahadata[NIM] = data
-        print("Data berhasil diubah.")
-    else:
-        print("NIM tidak ditemukan.")
-        
-def cari():
-    NIM = int(input("Masukkan NIM yang ingin dicari: "))
-    if NIM in mahadata:
-        data = {NIM: mahadata[NIM]}
-        tb.tabel(data, title=f"Data Mahasiswa dengan NIM {NIM}")
-    else:
-        print("NIM tidak ditemukan.")
-        
 def lihat():
-    tb.tabel(mahadata, title="Data Mahasiswa")
+    tb.tabel(mahadata, title="Data Mahasiswa") 
+def tambah():
+    NIM = nim_adalah("Masukkan NIM (e.g. 123456789): ")
+    mahadata[NIM] = minta(NIM)
+    print("Data berhasil ditambahkan.")
+def ubah():
+    NIM = nim_adalah("Masukkan NIM yang ingin diubah: ", harus_ada=True)
+    mahadata[NIM] = minta(NIM)
+    print("Data berhasil diubah.")
+def hapus():
+    NIM = nim_adalah("Masukkan NIM yang ingin dihapus: ", harus_ada=True)
+    del mahadata[NIM]
+    print("Data berhasil dihapus.")
+def cari():
+    NIM = nim_adalah("Masukkan NIM yang ingin dicari: ", harus_ada=True)
+    tb.tabel({NIM: mahadata[NIM]}, title=f"Data Mahasiswa dengan NIM {NIM}")
