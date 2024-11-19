@@ -9,22 +9,22 @@ menu = {
     "6": exit,      "k" : exit
 }
 
-reset = "\033[0m"
-hijau = "\033[1;32m"
-biru = "\033[1;34m"
-merah = "\033[1;31m"
-kuning = "\033[1;33m"
-ungu = "\033[1;35m"
-putih = "\033[1;37m"
+r = "\033[0m"
+h = "\033[1;32m"
+b = "\033[1;34m"
+m = "\033[1;31m"
+k = "\033[1;33m"
+u = "\033[1;35m"
+p = "\033[1;37m"
 
 while True:
     print(
-        f"{putih}L{reset}ihat |", 
-        f"{hijau}T{reset}ambah |", 
-        f"{biru}U{reset}bah |", 
-        f"{merah}H{reset}apus |", 
-        f"{kuning}C{reset}ari |", 
-        f"{ungu}K{reset}eluar"
+        f"{p}L{r}ihat |", 
+        f"{h}T{r}ambah |", 
+        f"{b}U{r}bah |", 
+        f"{m}H{r}apus |", 
+        f"{k}C{r}ari |", 
+        f"{u}K{r}eluar"
     )
     pilihan = input("Masukkan pilihan: ").lower()
     if pilihan in menu:

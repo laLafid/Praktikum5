@@ -1,6 +1,7 @@
-from tabulate import tabulate
+from tabulate import tabulate # modulnya harus ada
 
 def tabel(data, headers=None, title=""):
+# fungsi ini menggunakan modul tabulate untuk mencetak table data
     if not data: 
         table = [["Tidak ada data"]]
         print(tabulate(
