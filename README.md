@@ -142,7 +142,7 @@ Program akan terus menampilkan menu kepada pengguna sampai opsi keluar di pilih.
 
 
 # Output Dari Program Ini
-```https://github.com/laLafid/Praktikum5```
+```Menambahkan Data```
 ![alt text](gambar/tambah.png)
 
 
