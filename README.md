@@ -7,7 +7,7 @@
 4. Mengulang langkah 2 sampai pengguna memilih opsi keluar.
 
 # Gambaran Flowchart
-![alt text](gambar/flowchart.png)
+![alt text](gambar/flowchrtp5.png)
 
 # Struktur Kode
 
