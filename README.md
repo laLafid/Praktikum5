@@ -142,23 +142,26 @@ Program akan terus menampilkan menu kepada pengguna sampai opsi keluar di pilih.
 
 
 # Output Dari Program Ini
-
+```https://github.com/laLafid/Praktikum5```
 ![alt text](gambar/tambah.png)
-Menambahkan data
 
+
+```Menampilkan tabel data```
 ![alt text](gambar/tampilkan.png)
-Menampilkan tabel data
 
+
+```Mengubah data```
 ![alt text](gambar/ubah.png)
-Mengubah data
 
+
+```Mencari```
 ![alt text](gambar/cari.png)
-Mencari 
+ 
 
+```Menghapus data```
 ![alt text](gambar/hapu.png)
 ![alt text](gambar/hapus.png)
-Menghapus data
 
 
+```Keluar```
 ![alt text](gambar/keluar.png)
-Keluar
